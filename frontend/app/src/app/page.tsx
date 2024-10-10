@@ -28,9 +28,11 @@ const Home: React.FC = async () => {
   console.log(bookings);
 
   return (
-    <div>
+    <div
+      style={{ display: "flex", flexDirection: "column", marginBottom: "5px" }}
+    >
       <h1>Current booking count: {bookings.length}</h1>
-      {bookings &&
+      {bookings ? (
         bookings.map((booking: Booking) => {
           const date = moment(booking.date);
 
@@ -56,7 +58,15 @@ const Home: React.FC = async () => {
               </Link>
             </div>
           );
-        })}
+        })
+      ) : (
+        <div>
+          <p>No bookings yet, please add a booking through the button below</p>
+        </div>
+      )}
+      <Link href="/add-booking">
+        <button>Add a Booking</button>
+      </Link>
     </div>
   );
 };
