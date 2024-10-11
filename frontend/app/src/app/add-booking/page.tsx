@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import "./addBooking.css";
+
 interface BookingData {
   service: string;
   doctor_name: string;
@@ -72,99 +74,103 @@ const AddBookingForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ color: "#000" }}>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <div>
-        <label>Service:</label>
-        <input
-          type="text"
-          value={service}
-          onChange={(e) => setService(e.target.value)}
-          placeholder="E.g. Annual Check-up, Flu Shot"
-          required
-        />
-      </div>
+    <div className="container">
+      <form onSubmit={handleSubmit} className="form-container">
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <div>
+          <label>Service:</label>
+          <input
+            type="text"
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+            placeholder="E.g. Annual Check-up"
+            required
+          />
+        </div>
 
-      <div>
-        <label>Doctor Name:</label>
-        <input
-          type="text"
-          value={doctorName}
-          onChange={(e) => setDoctorName(e.target.value)}
-          placeholder="Doctor's Name"
-          required
-        />
-      </div>
+        <div>
+          <label>Doctor Name:</label>
+          <input
+            type="text"
+            value={doctorName}
+            onChange={(e) => setDoctorName(e.target.value)}
+            placeholder="Surname of the Doctor"
+            required
+          />
+        </div>
 
-      <div>
-        <label>Start Time:</label>
-        <input
-          type="number"
-          value={startHours}
-          onChange={(e) => setStartHours(e.target.value)}
-          min="1"
-          max="12"
-          placeholder="HH"
-          required
-        />
-        :
-        <input
-          type="number"
-          value={startMinutes}
-          onChange={(e) => setStartMinutes(e.target.value)}
-          min="0"
-          max="59"
-          placeholder="MM"
-          required
-        />
-        <select
-          value={startAmPm}
-          onChange={(e) => setStartAmPm(e.target.value)}
-        >
-          <option value="AM">AM</option>
-          <option value="PM">PM</option>
-        </select>
-      </div>
+        <div>
+          <label>Start Time:</label>
+          <input
+            type="number"
+            value={startHours}
+            onChange={(e) => setStartHours(e.target.value)}
+            min="1"
+            max="12"
+            placeholder="00"
+            required
+          />
+          :
+          <input
+            type="number"
+            value={startMinutes}
+            onChange={(e) => setStartMinutes(e.target.value)}
+            min="0"
+            max="59"
+            placeholder="00"
+            required
+          />
+          <select
+            value={startAmPm}
+            onChange={(e) => setStartAmPm(e.target.value)}
+          >
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
 
-      <div>
-        <label>End Time:</label>
-        <input
-          type="number"
-          value={endHours}
-          onChange={(e) => setEndHours(e.target.value)}
-          min="1"
-          max="12"
-          placeholder="HH"
-          required
-        />
-        :
-        <input
-          type="number"
-          value={endMinutes}
-          onChange={(e) => setEndMinutes(e.target.value)}
-          min="0"
-          max="59"
-          placeholder="MM"
-          required
-        />
-        <select value={endAmPm} onChange={(e) => setEndAmPm(e.target.value)}>
-          <option value="AM">AM</option>
-          <option value="PM">PM</option>
-        </select>
-      </div>
+        <div>
+          <label>End Time:</label>
+          <input
+            type="number"
+            value={endHours}
+            onChange={(e) => setEndHours(e.target.value)}
+            min="1"
+            max="12"
+            placeholder="00"
+            required
+          />
+          :
+          <input
+            type="number"
+            value={endMinutes}
+            onChange={(e) => setEndMinutes(e.target.value)}
+            min="0"
+            max="59"
+            placeholder="00"
+            required
+          />
+          <select value={endAmPm} onChange={(e) => setEndAmPm(e.target.value)}>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
 
-      <div>
-        <label>Date:</label>
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
-      </div>
+        <div>
+          <label>Date:</label>
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
+        </div>
 
-      <button type="submit">Add Booking</button>
-    </form>
+        <button type="submit" className="submit-button">
+          Add Booking
+        </button>
+      </form>
+    </div>
   );
 };
 

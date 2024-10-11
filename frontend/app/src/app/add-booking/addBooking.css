@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: 50px auto 0px auto;
+  border: solid;
+  border-width: 4px;
+  border-color: #25bee1;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Adjust as needed */
+  margin: 0 auto; /* Center the form */
+  padding: 20px;
+}
+
+/* Input Fields */
+.form-container input,
+.form-container select {
+  border: 1px solid #25bee1; /* Light gray border */
+  background-color: transparent; /* Transparent background */
+  padding: 10px;
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Small black drop shadow */
+  margin-bottom: 15px; /* Space between inputs */
+  font-size: 16px; /* Adjust font size */
+}
+
+.form-container label {
+  margin-right: 5px;
+}
+
+/* Submit Button */
+.submit-button {
+  background: #25bee1;
+  border: 1px solid #25bee1;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.submit-button:hover,
+.submit-button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #25bee1;
+}
+
+.submit-button:active {
+  opacity: 0.5;
+}

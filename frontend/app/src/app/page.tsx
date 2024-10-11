@@ -1,6 +1,8 @@
 import Link from "next/link";
 import moment from "moment";
 
+import "./home.css";
+
 interface Booking {
   id: number;
   service: string;
@@ -28,22 +30,24 @@ const Home: React.FC = async () => {
   console.log(bookings);
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", marginBottom: "5px" }}
-    >
-      <h1>Current booking count: {bookings.length}</h1>
-      {bookings ? (
-        bookings.map((booking: Booking) => {
-          const date = moment(booking.date);
+    <div className="container">
+      <div className="booking-count">
+        <h1 className="booking-count">
+          Current booking count: {bookings.length}
+        </h1>
+      </div>
+      <Link href="/add-booking" className="btn-container">
+        <button className="add-booking-btn">Add a Booking</button>
+      </Link>
+      <div className="booking-list">
+        {bookings ? (
+          bookings.map((booking: Booking) => {
+            const date = moment(booking.date);
 
-          const month = date.format("MMMM");
-          const day = date.format("D");
+            const month = date.format("MMMM");
+            const day = date.format("D");
 
-          return (
-            <div
-              style={{ display: "flex", marginBottom: "15px" }}
-              key={booking.id}
-            >
+            return (
               <Link
                 href={{
                   pathname: `/booking/${booking.id}`,
@@ -53,20 +57,21 @@ const Home: React.FC = async () => {
                     end_time: booking.end_time,
                   },
                 }}
+                key={booking.id}
+                className="booking"
               >
                 A Booking on {month} {day} starting at {booking.start_time}
               </Link>
-            </div>
-          );
-        })
-      ) : (
-        <div>
-          <p>No bookings yet, please add a booking through the button below</p>
-        </div>
-      )}
-      <Link href="/add-booking">
-        <button>Add a Booking</button>
-      </Link>
+            );
+          })
+        ) : (
+          <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+            <p>
+              No bookings yet, please add a booking through the button below
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

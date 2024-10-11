@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: 50px auto 0px auto;
+  border: solid;
+  border-width: 4px;
+  border-color: #25bee1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.booking-count {
+  width: 100%;
+  height: 20px;
+  font-size: 1rem;
+  background-color: #25bee1;
+  text-align: center;
+}
+
+.booking-count h1 {
+  color: white;
+  margin-top: 0px;
+}
+
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  padding-top: 10px;
+  border-style: solid;
+  border-width: 5px 0;
+  border-color: #25bee1;
+  overflow: scroll;
+}
+
+.booking {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #25bee1;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
+.booking:hover {
+  color: #25bee1;
+}
+
+/* .add-booking-btn {
+  margin: 3px auto 3px auto;
+  background-color: #25bee1;
+  color: white;
+}
+
+.add-booking-btn:hover {
+  background-color: transparent;
+  color: #25bee1;
+} */
+
+.btn-container {
+  margin: 10px auto 10px auto;
+}
+
+.add-booking-btn {
+  background: #25bee1;
+  border: 1px solid #25bee1;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.add-booking-btn:hover,
+.add-booking-btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #25bee1;
+}
+
+.add-booking-btn:active {
+  opacity: 0.5;
+}
